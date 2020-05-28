@@ -36,5 +36,20 @@ namespace NUnitTestProject
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.LastName_CapitalFirstLatter_Analysis("wamankar"));
         }
+
+        [Test]
+        public void givenLastName_whenLetterMoreThree_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(true, useranalysis.LastName_CapitalFirstLatter_Analysis("Wamankar"));
+        }
+
+        [Test]
+        public void givenFirstName_whenLetterMoreThree_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(true, useranalysis.firstName_CapitalFirstLatter_Analysis("Rahul"));
+        }
+
     }
 }
