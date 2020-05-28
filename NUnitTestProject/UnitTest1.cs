@@ -58,5 +58,12 @@ namespace NUnitTestProject
             Assert.AreEqual(true, useranalysis.EmailId_Analysis("abc.xyz@bl.co.in"));
         }
 
+        [Test]
+        public void givenEmailId_whenNotHaveMandetoryField_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.EmailId_Analysis("a.xyz@bl.co.in"));
+        }
+
     }
 }
