@@ -53,7 +53,7 @@ namespace NUnitTestProject
         public bool mobileNumber_Analysis(string Name)
         {
             int NameLength = Name.Length;
-            if (NameLength == 0 || NameLength <= 3)
+            if (NameLength == 0 || NameLength <= 9)
             {
                 return false;
             }

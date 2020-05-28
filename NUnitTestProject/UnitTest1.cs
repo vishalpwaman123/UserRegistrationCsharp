@@ -72,5 +72,12 @@ namespace NUnitTestProject
             Assert.AreEqual(true, useranalysis.mobileNumber_Analysis("91 7758039722"));
         }
 
+        [Test]
+        public void givenMobileNumber_whenNotHaveMandetoryField_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.mobileNumber_Analysis("91 77503972"));
+        }
+
     }
 }
