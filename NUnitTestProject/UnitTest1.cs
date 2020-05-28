@@ -115,5 +115,12 @@ namespace NUnitTestProject
             Assert.AreEqual(true, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishal123"));
         }
 
+        [Test]
+        public void givenPassword_whenNotHaveAtLeastOneNumber_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishalwamakar"));
+        }
+
     }
 }
