@@ -119,7 +119,7 @@ namespace NUnitTestProject
         public void givenPassword_whenNotHaveAtLeastOneNumber_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
-            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishalwamakar"));
+            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishalwamaka"));
         }
 
     }
