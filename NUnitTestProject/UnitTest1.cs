@@ -98,7 +98,21 @@ namespace NUnitTestProject
         public void givenPassword_whenHaveAtLeastOneUpperCase_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
-            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneUC_Analysis("rahul"));
+            Assert.AreEqual(true, useranalysis.passwordHaveAtLeastOneUC_Analysis("Vishalwaman"));
+        }
+
+        [Test]
+        public void givenPassword_whenNotHaveAtLeastOneUpperCase_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneUC_Analysis("vishalwaman"));
+        }
+
+        [Test]
+        public void givenPassword_whenHaveAtLeastOneNumber_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(true, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishal123"));
         }
 
     }
