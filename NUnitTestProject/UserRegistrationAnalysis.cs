@@ -50,5 +50,20 @@ namespace NUnitTestProject
             return false;
         }
 
+        public bool mobileNumber_Analysis(string Name)
+        {
+            int NameLength = Name.Length;
+            if (NameLength == 0 || NameLength <= 3)
+            {
+                return false;
+            }
+
+            if (Regex.IsMatch(Name, "^[0-9]{2,3}[ ]+[0-9]{10}$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
