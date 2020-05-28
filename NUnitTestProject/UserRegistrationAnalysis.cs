@@ -35,5 +35,20 @@ namespace NUnitTestProject
             return false;
         }
 
+        public bool EmailId_Analysis(string Name)
+        {
+            int NameLength = Name.Length;
+            if (NameLength == 0 || NameLength <= 3)
+            {
+                return false;
+            }
+
+            if (Regex.IsMatch(Name, "^abc[.]+[a-zA-Z0-9.-_]{3,}@bl[.]+co[.]+[a-z]+$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

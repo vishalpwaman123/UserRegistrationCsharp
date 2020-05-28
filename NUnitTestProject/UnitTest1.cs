@@ -51,5 +51,12 @@ namespace NUnitTestProject
             Assert.AreEqual(true, useranalysis.firstName_CapitalFirstLatter_Analysis("Rahul"));
         }
 
+        [Test]
+        public void givenEmailId_whenHaveMandetoryField_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(true, useranalysis.EmailId_Analysis("abc.xyz@bl.co.in"));
+        }
+
     }
 }
