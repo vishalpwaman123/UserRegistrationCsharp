@@ -79,5 +79,12 @@ namespace NUnitTestProject
             Assert.AreEqual(false, useranalysis.mobileNumber_Analysis("91 77503972"));
         }
 
+        [Test]
+        public void givenPassword_whenHaveMandetoryField_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.password_Analysis("VishalWamankar"));
+        }
+
     }
 }

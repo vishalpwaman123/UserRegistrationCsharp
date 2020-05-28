@@ -65,5 +65,20 @@ namespace NUnitTestProject
             return false;
         }
 
+        public bool password_Analysis(string Name)
+        {
+            int NameLength = Name.Length;
+            if (NameLength == 0 || NameLength <= 7)
+            {
+                return false;
+            }
+
+            if (Regex.IsMatch(Name, "[0-9]{8}$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
