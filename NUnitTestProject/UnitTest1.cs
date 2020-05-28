@@ -24,7 +24,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void givenLastName_whenFirstLetterCapital_shouldReturnFalse()
+        public void givenLastName_whenFirstLetterCapital_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.LastName_CapitalFirstLatter_Analysis("Waman"));
@@ -38,14 +38,14 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void givenLastName_whenLetterMoreThree_shouldReturnFalse()
+        public void givenLastName_whenLetterMoreThree_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.LastName_CapitalFirstLatter_Analysis("Wamankar"));
         }
 
         [Test]
-        public void givenFirstName_whenLetterMoreThree_shouldReturnFalse()
+        public void givenFirstName_whenLetterMoreThree_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.firstName_CapitalFirstLatter_Analysis("Rahul"));
@@ -80,14 +80,14 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void givenPassword_whenHaveMandetoryField_shouldReturnTrue()
+        public void givenPassword_whenHaveMandetoryField_shouldReturnFalse()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.password_Analysis("VishalWamankar"));
         }
 
         [Test]
-        public void givenPassword_whenNotHaveMandetoryField_shouldReturnTrue()
+        public void givenPassword_whenNotHaveMandetoryField_shouldReturnFalse()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.password_Analysis("rahul"));
@@ -102,7 +102,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void givenPassword_whenNotHaveAtLeastOneUpperCase_shouldReturnTrue()
+        public void givenPassword_whenNotHaveAtLeastOneUpperCase_shouldReturnFalse()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneUC_Analysis("vishalwaman"));
@@ -116,7 +116,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void givenPassword_whenNotHaveAtLeastOneNumber_shouldReturnTrue()
+        public void givenPassword_whenNotHaveAtLeastOneNumber_shouldReturnFalse()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneNumber_Analysis("Vishalwamaka"));
@@ -127,6 +127,13 @@ namespace NUnitTestProject
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.passwordHaveAtLeastOneSpecial_Analysis("rahul@987"));
+        }
+
+        [Test]
+        public void givenPassword_whenNotHaveAtLeastOneSpecial_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneSpecial_Analysis("rahul987"));
         }
 
     }
