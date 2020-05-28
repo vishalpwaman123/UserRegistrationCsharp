@@ -73,7 +73,22 @@ namespace NUnitTestProject
                 return false;
             }
 
-            if (Regex.IsMatch(Name, "[0-9]{8}$"))
+            if (Regex.IsMatch(Name, "^[0-9A-Za-z]{8,}$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool passwordHaveAtLeastOneUC_Analysis(string Name)
+        {
+            int NameLength = Name.Length;
+            if (NameLength == 0 || NameLength <= 7)
+            {
+                return false;
+            }
+
+            if (Regex.IsMatch(Name, "^(?=.*[A-Z])[A-Za-z0-9]{8,}$"))
             {
                 return true;
             }
