@@ -125,5 +125,20 @@ namespace NUnitTestProject
             return false;
         }
 
+        public bool EmailA_Analysis(string Name)
+        {
+            int NameLength = Name.Length;
+            if (NameLength == 0 || NameLength <=5 )
+            {
+                return false;
+            }
+
+            if (Regex.IsMatch(Name, "^[a-zA-Z]+[-.+]?[0-9]*@[a-z0-9]+(.|(com|net|au))+$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

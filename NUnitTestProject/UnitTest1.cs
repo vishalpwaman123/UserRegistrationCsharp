@@ -136,5 +136,12 @@ namespace NUnitTestProject
             Assert.AreEqual(false, useranalysis.passwordHaveAtLeastOneSpecial_Analysis("rahul987"));
         }
 
+        [Test]
+        public void givenEmail_whenHaveAll_shouldReturnTrue()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(true, useranalysis.EmailA_Analysis("vishalpwaman1997@gmail.com"));
+        }
+
     }
 }
