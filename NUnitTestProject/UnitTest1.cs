@@ -4,16 +4,19 @@ namespace NUnitTestProject
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
+        
         [Test]
         public void givenFirstName_whenFirstLetterCapital_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.firstName_CapitalFirstLatter_Analysis("Vishal"));
+        }
+
+        [Test]
+        public void givenFirstName_whenPassingNull_shouldReturnFalse()
+        {
+            UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, useranalysis.firstName_CapitalFirstLatter_Analysis(null));
         }
 
         [Test]
@@ -52,6 +55,13 @@ namespace NUnitTestProject
         }
 
         [Test]
+        public void GivenFirstName_WhenNull_ShouldThrowException()
+        {
+            UserRegistrationAnalysis validator = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, validator.firstName_CapitalFirstLatter_Analysis(null));
+        }
+
+        [Test]
         public void givenEmailId_whenHaveMandetoryField_shouldReturnTrue()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
@@ -65,6 +75,8 @@ namespace NUnitTestProject
             Assert.AreEqual(false, useranalysis.EmailId_Analysis("a.xyz@bl.co.in"));
         }
 
+
+
         [Test]
         public void givenMobileNumber_whenHaveMandetoryField_shouldReturnTrue()
         {
@@ -72,11 +84,20 @@ namespace NUnitTestProject
             Assert.AreEqual(true, useranalysis.mobileNumber_Analysis("91 7758039722"));
         }
 
+        
+
         [Test]
         public void givenMobileNumber_whenNotHaveMandetoryField_shouldReturnFalse()
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.mobileNumber_Analysis("91 77503972"));
+        }
+
+        [Test]
+        public void GivenMobileNumber_WhenNull_ShouldThrowException()
+        {
+            UserRegistrationAnalysis validator = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, validator.mobileNumber_Analysis(null));
         }
 
         [Test]
@@ -91,6 +112,13 @@ namespace NUnitTestProject
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(false, useranalysis.password_Analysis("rahul"));
+        }
+
+        [Test]
+        public void GivenPassword_WhenNull_ShouldThrowException()
+        {
+            UserRegistrationAnalysis validator = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, validator.password_Analysis(null));
         }
 
 
@@ -141,6 +169,13 @@ namespace NUnitTestProject
         {
             UserRegistrationAnalysis useranalysis = new UserRegistrationAnalysis();
             Assert.AreEqual(true, useranalysis.EmailA_Analysis("vishalpwaman1997@gmail.com"));
+        }
+
+        [Test]
+        public void GivenEmailId_WhenNull_ShouldThrowException()
+        {
+            UserRegistrationAnalysis validator = new UserRegistrationAnalysis();
+            Assert.AreEqual(false, validator.EmailA_Analysis(null));
         }
 
     }
